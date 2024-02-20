@@ -44,12 +44,12 @@ def simple_multiplication(pr_e1, pr_e2):
     print(f"             = {pr_e1} * {pr_e2}")
     print(f"             = {result}")
 
-def complete_multiplication(pr_e1_given_e2, pr_e2):
+def complete_multiplication(pr_e1, pr_e2_given_e1):
     """Calculates the probability bott E1 and E2 occur (may not be indpendent)."""
-    validate_probabilities(pr_e2, pr_e1_given_e2)
-    result = pr_e1_given_e2 * pr_e2
-    print(f"P(E1 and E2) = P(E1|E2) * P(E2)")
-    print(f"             = {pr_e1_given_e2} * {pr_e2}")
+    validate_probabilities(pr_e1, pr_e2_given_e1)
+    result = pr_e2_given_e1 * pr_e1
+    print(f"P(E1 and E2) = P(E1) * P(E2|E1)")
+    print(f"             = {pr_e1} * {pr_e2_given_e1}")
     print(f"             = {result}")
 
 def total_probability(pr_e_given_h1, pr_h1, pr_e_given_h2, pr_h2):
