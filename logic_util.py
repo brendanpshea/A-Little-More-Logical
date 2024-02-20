@@ -42,7 +42,7 @@ def simple_multiplication(pr_e1, pr_e2):
     result = pr_e1 * pr_e2
     print(f"P(E1 and E2) = P(E1) * P(E2)")
     print(f"             = {pr_e1} * {pr_e2}")
-    print(f"             = {result}")
+    print(f"             = {result: .2f}")
 
 def complete_multiplication(pr_e1, pr_e2_given_e1):
     """Calculates the probability bott E1 and E2 occur (may not be indpendent)."""
@@ -50,7 +50,7 @@ def complete_multiplication(pr_e1, pr_e2_given_e1):
     result = pr_e2_given_e1 * pr_e1
     print(f"P(E1 and E2) = P(E1) * P(E2|E1)")
     print(f"             = {pr_e1} * {pr_e2_given_e1}")
-    print(f"             = {result}")
+    print(f"             = {result :.2f}")
 
 def total_probability(pr_e_given_h1, pr_h1, pr_e_given_h2, pr_h2):
     """
@@ -60,7 +60,7 @@ def total_probability(pr_e_given_h1, pr_h1, pr_e_given_h2, pr_h2):
     pr_e = pr_e_given_h1 * pr_h1 + pr_e_given_h2 * pr_h2
     return (f"P(E) = P(E|H1) * P(H1) + P(E|H2) * P(H2)\n"
             f"     = {pr_e_given_h1} * {pr_h1} + {pr_e_given_h2} * {pr_h2}\n"
-            f"     = {pr_e}")
+            f"     = {pr_e :.2f}")
 def bayes_theorem(p_h, pr_e_given_h, pr_e_given_not_h):
     """Calculates probability of a hypotheses being true, given some evidence."""
     validate_probabilities(p_h, pr_e_given_h, pr_e_given_not_h)
@@ -69,4 +69,4 @@ def bayes_theorem(p_h, pr_e_given_h, pr_e_given_not_h):
     p_h_given_e = (pr_e_given_h * p_h) / pr_e
     print(f"P(H|E) = (P(E|H) * P(H)) / [P(E|H) * P(H) + P(E|not H) * P(not H)]")
     print(f"       = ({pr_e_given_h} * {p_h}) / ({pr_e_given_h} * {p_h} + {pr_e_given_not_h} * {p_not_h})")
-    print(f"       = {round(p_h_given_e,2)}")
+    print(f"       = {p_h_given_e,2: .2f}")
