@@ -61,12 +61,13 @@ def total_probability(pr_e_given_h1, pr_h1, pr_e_given_h2, pr_h2):
     return (f"P(E) = P(E|H1) * P(H1) + P(E|H2) * P(H2)\n"
             f"     = {pr_e_given_h1} * {pr_h1} + {pr_e_given_h2} * {pr_h2}\n"
             f"     = {pr_e :.2f}")
-def bayes_theorem(p_h, pr_e_given_h, pr_e_given_not_h):
+
+def bayes_theorem(pr_h, pr_e_given_h, pr_e_given_not_h):
     """Calculates probability of a hypotheses being true, given some evidence."""
-    validate_probabilities(p_h, pr_e_given_h, pr_e_given_not_h)
-    p_not_h = 1 - p_h
-    pr_e = pr_e_given_h * p_h + pr_e_given_not_h * p_not_h
-    p_h_given_e = (pr_e_given_h * p_h) / pr_e
+    validate_probabilities(pr_h, pr_e_given_h, pr_e_given_not_h)
+    pr_not_h = 1 - pr_h
+    pr_e = pr_e_given_h * pr_h + pr_e_given_not_h * pr_not_h
+    pr_h_given_e = (pr_e_given_h * pr_h) / pr_e
     print(f"P(H|E) = (P(E|H) * P(H)) / [P(E|H) * P(H) + P(E|not H) * P(not H)]")
-    print(f"       = ({pr_e_given_h} * {p_h}) / ({pr_e_given_h} * {p_h} + {pr_e_given_not_h} * {p_not_h})")
-    print(f"       = {p_h_given_e,2: .2f}")
+    print(f"       = ({pr_e_given_h} * {pr_h}) / ({pr_e_given_h} * {pr_h} + {pr_e_given_not_h} * {pr_not_h})")
+    print(f"       = {pr_h_given_e: .2f}")
