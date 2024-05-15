@@ -101,6 +101,11 @@ def calculate_variance(my_list):
     # Step 4: Divide by the number of data points minus one (for sample variance)
     variance = sum_squared_diffs / (len(my_list) - 1)
     print(f"Step 4: Divide by the number of data points minus one (for sample variance): {round(variance,2)}")
+
+    # Step 5: Take the square root to get the standard deviation
+    sd = variance ** 0.5
+    print(f"Step 5: Take the square root to get the standard deviation: {round(sd,2)}")
+    
     
     return variance
 
