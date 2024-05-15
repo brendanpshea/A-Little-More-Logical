@@ -78,9 +78,6 @@ def calculate_variance(my_list):
 
     Parameters:
     my_list (list): A list of numbers.
-
-    Returns:
-    float: The calculated variance.
     """
     import numpy as np
     # Step 0: Print original list
@@ -106,6 +103,3 @@ def calculate_variance(my_list):
     sd = variance ** 0.5
     print(f"Step 5: Take the square root to get the standard deviation: {round(sd,2)}")
     
-    
-    return variance
-
